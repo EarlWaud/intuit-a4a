@@ -2,9 +2,7 @@
 import psutil
 import json
 from flask import Flask
-from flask import jsonify
 from collections import namedtuple
-from psutil._common import bytes2human
 
 app = Flask(__name__)
 
