@@ -1,4 +1,3 @@
-# import os
 import psutil
 import json
 from flask import Flask
