@@ -13,18 +13,21 @@ def json_ntuple(x):
 
 @app.route('/')
 def hello_world():
+  print('Hello, World!')
   return 'Hello, World!'
 
 
 @app.route('/cpu-stats')
 def get_cpu():
   cpu = psutil.cpu_stats()
+  print(json_ntuple(cpu))
   return(json_ntuple(cpu))
 
 
 @app.route('/memory')
 def get_memory():
   mem = psutil.virtual_memory()
+  print(json_ntuple(mem))
   return(json_ntuple(mem))
 
 
@@ -46,6 +49,7 @@ def get_disk():
   for item in nt.items():
     nt[item[0]] = convert_disk_value_to_gb(item[1])
 
+  print("["+json.dumps(dict(nt), sort_keys=True)+"]")
   return("["+json.dumps(dict(nt), sort_keys=True)+"]")
 
 
