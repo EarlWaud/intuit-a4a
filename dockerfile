@@ -14,7 +14,7 @@ RUN pip3 install flask waitress
 
 RUN git clone https://github.com/EarlWaud/intuit-a4a.git
 
-EXPOSE 8080
+EXPOSE 80
 ENV PYTHONPATH=/intuit-a4a
 WORKDIR /intuit-a4a
 
